@@ -40,7 +40,7 @@ int readFile(const char *fileName){
  */
 int main(int argc, char *argv[]){
     if(argc < 2){
-        printf("[?] >> Usage:\n\t $> bat.exe <file>\n");
+        printf("[?] >> Usage:\n\t $> cat.exe <file>\n");
         return EXIT_FAILURE;
     }
     readFile(argv[1]);
