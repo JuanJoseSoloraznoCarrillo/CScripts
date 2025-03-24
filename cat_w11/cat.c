@@ -1,7 +1,9 @@
 /**
  * Author: Solorzano, Juan Jose
  * Date: 12/27/2024
- * File description: 
+ * File description: This program reads a file and prints its content.
+ * The program receives the name of the file as an argument.
+ * The program will print the content of the file.
  */
 
 #include <stdio.h>

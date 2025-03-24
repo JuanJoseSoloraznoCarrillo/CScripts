@@ -1,7 +1,11 @@
 /**
- * file searcher in C.
  * Author: Solorzano, Juan Jose.
+ * Date: 2020-07-07.
+ * Description: This program searches for a file in the current directory and its subdirectories.
+ * The program receives the name of the file to search as an argument. The program will print the 
+ * full path of the file.
  */
+// Importing libraries
 #include <stdio.h>
 #include <string.h>
 #include <dirent.h>
@@ -9,6 +13,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+/**
+ * This function searches for a file in the current directory and its subdirectories.
+ * @param path: The path to search for the file.
+ * @param fileName: The name of the file to search.
+ * @param buffer: The buffer to store the full path of the file.
+ * @param buffer_size: The size of the buffer.
+ * @param verbose: If 1, the function will print the search progress.
+ */
 int findFile(const char *path, const char *fileName, char *buffer, size_t buffer_size, int verbose){
     DIR *dir = opendir(path);
     if (dir == NULL) {return 1;} // Return non-zero to indicate not found or an error
@@ -46,7 +58,11 @@ int findFile(const char *path, const char *fileName, char *buffer, size_t buffer
     closedir(dir); // close directory.
     return 1; // file name not found.
 }
-
+/**
+ * Description: Main function of the program.
+ * @param argc: The number of arguments.
+ * @param args: The arguments.
+ */
 int main(int argc,char *args[]){
     clock_t start,end;
     double cpuTimeUsed;
